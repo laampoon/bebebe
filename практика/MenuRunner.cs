@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace практика
 {
@@ -32,6 +33,12 @@ namespace практика
                 case 1: BaseLevel();
                     break;
                 case 2: AverageLevel();
+                    break;
+                case 3:
+                    AdvancedLevel();
+                    break;
+                default:
+                    Console.WriteLine("Неверный выбор.");
                     break;
 
             }
@@ -85,6 +92,28 @@ namespace практика
 
             int a = Convert.ToInt32(Console.ReadLine());
             Task2 prog = new Task2();
+            prog.Swith(a);
+        }
+
+        public void AdvancedLevel()
+        {
+            Console.Clear();
+            Console.WriteLine("--- Уровень: Эксперт / Профессиональный (Задания 36–50) ---");
+            Console.WriteLine("Задание 36. Дубликаты в List (HashSet + GroupBy)");
+            Console.WriteLine("Задание 37. Мемоизация Фибоначчи через Dictionary");
+            Console.WriteLine("Задание 38. List<T> vs LinkedList<T> (бенчмарк)");
+            Console.WriteLine("Задание 39. yield return — генератор чётных чисел");
+            Console.WriteLine("Задание 40. async/await + обработка исключений");
+            Console.WriteLine("Задание 41. Task.WhenAll — параллельно 10 задач");
+            Console.WriteLine("Задание 42. CancellationToken — отмена через 2 сек");
+            Console.WriteLine("Задание 43. Множественные типы исключений, порядок catch");
+            Console.WriteLine("Задание 44. Мини-проект «Todo List» (классы + JSON)");
+            Console.WriteLine("Задание 45. Мини-проект «Библиотека» + юнит-тесты"
+            + Environment.NewLine);
+            Console.WriteLine("Выберите задание: ");
+
+            int a = Convert.ToInt32(Console.ReadLine());
+            Task3 prog = new Task3();
             prog.Swith(a);
         }
     }
