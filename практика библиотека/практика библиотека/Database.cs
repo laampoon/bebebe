@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,8 +9,7 @@ namespace практика_библиотека
 {
     public class Database
     {
-        private string connectionString =
-            "Server=localhost;Database=LibraryDB;Trusted_Connection=True;TrustServerCertificate=True;";
+        private string connectionString = "Server=.\\SQLEXPRESS;Database=Library;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public List<Book> GetBooks()
         {
