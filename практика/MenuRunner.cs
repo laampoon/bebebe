@@ -16,7 +16,8 @@ namespace практика
             Console.WriteLine("1. Уровень 1 — Базовый (задания 1–14)");
             Console.WriteLine("2. Уровень 2 — Средний (задания 16–34)");
             Console.WriteLine("3. Уровень 3 — Продвинутый (задания 36–50)");
-            Console.WriteLine("4. Выход" + Environment.NewLine);
+            Console.WriteLine("4. БД (задания 28-30)");
+            Console.WriteLine("5. Выход" + Environment.NewLine);
             Console.WriteLine("Выберите уровень: ");
             LevelMenu();
         }
@@ -24,7 +25,7 @@ namespace практика
         public void LevelMenu()
         {
             int a = Convert.ToInt32(Console.ReadLine());
-            switch(a)
+            switch (a)
             {
                 case 0:
                     Environment.Exit(0);
@@ -36,6 +37,9 @@ namespace практика
                     break;
                 case 3:
                     AdvancedLevel();
+                    break;
+                case 4:
+                    SQLLevel();
                     break;
                 default:
                     Console.WriteLine("Неверный выбор.");
@@ -116,5 +120,19 @@ namespace практика
             Task3 prog = new Task3();
             prog.Swith(a);
         }
+
+        public void SQLLevel()
+        {
+            Console.Clear();
+            Console.WriteLine("Задание 28 — C# + SQL: подключение и SELECT C#");
+            Console.WriteLine("Задание 29 — C# + SQL: параметризованный INSERT");
+            Console.WriteLine("Задание  30 — C# + SQL: мини-отчёт по отделам C#" + Environment.NewLine);
+            Console.WriteLine("Выберите задание: ");
+
+            int a = Convert.ToInt32(Console.ReadLine());
+            SQL prog = new SQL();
+            prog.Swith(a);
+        }
     }
 }
+
