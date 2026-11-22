@@ -10,8 +10,10 @@ namespace практика_библиотека
 
     public class Database
     {
-        private string connectionString =
-            "Server=DESKTOP-2A5MMVT\\SQLEXPRESS;Database=LibraryUWU;Trusted_Connection=True;TrustServerCertificate=True;";
+        private readonly string connectionString =
+            Environment.GetEnvironmentVariable("PRACTICE_Library")
+            ?? Environment.GetEnvironmentVariable("PRACTICE_Library", EnvironmentVariableTarget.User)
+            ?? @"Server=localhost\SQLEXPRESS02;Database=LibraryUWU;Trusted_Connection=True;TrustServerCertificate=True;";
 
         // Получение всех книг
         public List<Book> GetBooks()
@@ -21,7 +23,7 @@ namespace практика_библиотека
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-
+                
                 string query = @"
                 SELECT
                     Books.IDBook AS ID,
