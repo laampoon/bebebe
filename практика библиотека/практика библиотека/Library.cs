@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -82,9 +82,9 @@ namespace практика_библиотека
                             break;
                     }
                 }
-                catch (SqlException)
+                catch (SqlException ex)
                 {
-                    Console.WriteLine("Ошибка при работе с базой данных!");
+                    Console.WriteLine("Ошибка SQL: " + ex.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -117,7 +117,7 @@ namespace практика_библиотека
                 }
 
                 Console.WriteLine(
-                    book.Id + ". " +
+                    book.ID + ". " +
                     book.Title + " — " +
                     book.Author + " (" +
                     book.Year + ") [" +
@@ -145,7 +145,7 @@ namespace практика_библиотека
 
             foreach (Reader user in users)
             {
-                Console.WriteLine(user.Id + ". " + user.FullName);
+                Console.WriteLine(user.ID + ". " + user.FullName);
             }
 
             Console.Write("\nВведите ID пользователя: ");
